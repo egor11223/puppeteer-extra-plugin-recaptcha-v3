@@ -1,6 +1,6 @@
 {
-  "name": "puppeteer-extra-plugin-recaptcha",
-  "version": "3.6.8",
+  "name": "puppeteer-extra-plugin-recaptchas-v3",
+  "version": "3.6.9",
   "description": "A puppeteer-extra plugin to solve reCAPTCHAs and hCaptchas automatically.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -9,8 +9,8 @@
     "dist"
   ],
   "repository": "berstend/puppeteer-extra",
-  "homepage": "https://github.com/berstend/puppeteer-extra/tree/master/packages/puppeteer-extra-plugin-recaptcha",
-  "author": "berstend",
+  "homepage": "https://github.com/egor11223/puppeteer-extra-plugin-recaptcha-v3",
+  "author": "egor11223",
   "license": "MIT",
   "scripts": {
     "clean": "rimraf dist/*",
@@ -61,16 +61,19 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-sourcemaps": "^0.4.2",
     "rollup-plugin-typescript2": "^0.25.2",
+    "typescript": "4.4.3",
     "ts-node": "^8.5.4",
+    "tslib": "^2.6.2",
     "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
-    "tslint-config-standard": "^9.0.0",
-    "typescript": "4.4.3"
+    "tslint-config-standard": "^9.0.0"
   },
   "dependencies": {
     "debug": "^4.1.1",
     "merge-deep": "^3.0.2",
-    "puppeteer-extra-plugin": "^3.2.3"
+    "playwright-core": "^1.38.0",
+    "puppeteer-extra-plugin": "^3.2.3",
+    "rollup": "^1.26.3"
   },
   "peerDependencies": {
     "playwright-extra": "*",
@@ -83,6 +86,5 @@
     "playwright-extra": {
       "optional": true
     }
-  },
-  "gitHead": "babb041828cab50c525e0b9aab02d58f73416ef3"
+  }
 }

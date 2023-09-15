@@ -19,6 +19,8 @@ export interface DecodeRecaptchaAsyncResult {
 export interface TwoCaptchaProviderOpts {
   useEnterpriseFlag?: boolean
   useActionValue?: boolean
+  proxyType?: string
+  proxyAddress?: string;
 }
 
 const providerOptsDefaults: TwoCaptchaProviderOpts = {
@@ -88,6 +90,11 @@ async function getSolution(
     }
     if (opts.useEnterpriseFlag && captcha.isEnterprise) {
       extraData['enterprise'] = 1
+    }
+
+    if (opts.proxyType && opts.proxyAddress) {
+      extraData['proxytype'] = opts.proxyType.toUpperCase();
+      extraData['proxy'] = opts.proxyAddress;
     }
     
     if (process.env['2CAPTCHA_PROXY_TYPE'] && process.env['2CAPTCHA_PROXY_ADDRESS']) {
