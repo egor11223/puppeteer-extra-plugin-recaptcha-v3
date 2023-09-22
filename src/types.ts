@@ -28,7 +28,7 @@ export type RecaptchaPluginPageAdditions = {
   ) => Promise<EnterRecaptchaSolutionsResult>
 
   /** Attempt to detect and solve reCAPTCHAs on this page automatically. 🔮 */
-  solveRecaptchas: () => Promise<SolveRecaptchasResult>
+  solveRecaptchas: (params) => Promise<SolveRecaptchasResult>
 }
 
 export interface SolutionProvider<TOpts = any> {

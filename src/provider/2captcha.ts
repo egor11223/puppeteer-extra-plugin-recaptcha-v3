@@ -21,6 +21,7 @@ export interface TwoCaptchaProviderOpts {
   useActionValue?: boolean
   proxyType?: string
   proxyAddress?: string;
+  userAgent?: string;
 }
 
 const providerOptsDefaults: TwoCaptchaProviderOpts = {
@@ -100,6 +101,10 @@ async function getSolution(
     if (process.env['2CAPTCHA_PROXY_TYPE'] && process.env['2CAPTCHA_PROXY_ADDRESS']) {
          extraData['proxytype'] = process.env['2CAPTCHA_PROXY_TYPE'].toUpperCase()
          extraData['proxy'] = process.env['2CAPTCHA_PROXY_ADDRESS']
+    }
+
+    if (opts.userAgent) {
+      extraData['userAgent'] = opts.userAgent;
     }
       
     const { err, result, invalid } = await decodeRecaptchaAsync(
